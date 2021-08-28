@@ -1,0 +1,15 @@
+{
+    "name": "yacino/project",
+    "type": "project",
+    "autoload": {
+        "classmap": ["controller","model","views","public"],
+         "psr-4": {
+             "model\\":"model/",
+              "view\\":"view/",
+              "controller\\":"controller/",
+              "controller/public\\" : "controller/public"
+            
+             
+         } 
+    }
+}

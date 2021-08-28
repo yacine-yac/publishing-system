@@ -1,0 +1,33 @@
+ReWriteEngine on
+# RewriteRule ^profile/([^/.]+)?$ /user.php?direction=$1 [L]
+ErrorDocument 403 error.php
+ErrorDocument 404  error.php
+
+DirectoryIndex index.php 
+OPTIONS -INDEXES
+ServerSignature OFF
+
+
+#OPTIONS -FollowSymLinks 
+#RewriteCond %{REQUEST_FILENAME} !-f 
+#RewriteRule  . / [L,R=301]
+
+
+#RewriteBase 
+
+
+#RewriteRule ^SACHE$ %{REQUEST_FILENAME}
+
+#RewriteCond %{REQUEST_FILENAME} !-f 
+#RewriteCond %{REQUEST_FILENAME} !-d 
+
+
+RewriteRule ^(.*)$ index.php?url=$1  [QSA]  [NC,L]
+
+
+
+
+
+#RewriteRule ^([^/])/? public/index.php?url=$1 [L,QSA]
+
+#^([^/])/?
