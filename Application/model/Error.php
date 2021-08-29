@@ -1,5 +1,5 @@
 <?php
-namespace error;
+namespace model;
 class Error{
     public function __construct(){
         echo "from error model";
