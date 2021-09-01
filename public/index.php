@@ -3,7 +3,7 @@ namespace index;
 session_start();
 
 //print(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH));
-require "../Application/loader.php";
+require "loader.php";
 
 class Rooting{
     private $cookie;
@@ -25,8 +25,8 @@ class Rooting{
             $this->url["path_class"]= preg_replace('/[^A-Za-z0-9\-]/','',explode("/",trim(str_replace('\\','/',parse_url($url_variables['url'],PHP_URL_PATH)),'/')));
             $this->data=array_slice($url_variables,1);
            // print_r(array_slice($url_variables,1));
-
-
+echo "dsdfd";
+           print_r(array_slice($url_variables,1));
            //print_r($url_variables);echo "<br><br>";
            //print_r(parse_url($url_variables['url']));echo "<br><br>";
            
@@ -34,15 +34,17 @@ class Rooting{
           // echo "<br><br>";
            //  = preg_replace('/[^A-Za-z0-9\-]/','',explode('/',trim(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH),'/'),3));
            // print_r($this->url["path_class"]);
-          if(!isset($_COOKIE['client']) OR empty($_COOKIE['client'])){ 
+          if(!isset($_COOKIE['client']) OR empty($_COOKIE['client'])){  
+           //  $_POST=["email"=>"lffd@dsds.fd","password"=>"edss"];
             if(isset($_POST)  AND !empty($_POST)){
-                   $this->class_obj=new \model\Error();
+                 $this->class_obj=new \controller\outside\Login($this->url["path_class"],$_POST); 
+                 empty($_POST);
             }else{
-              if(!empty(implode(',',$this->url["path_class"]))){echo " not empty";
+              if(!empty(implode(',',$this->url["path_class"]))){ echo " not emptyvfvfd";
                  $this->class_obj=new \controller\outside\Login($this->url["path_class"],$this->data); 
-                 $this->class_obj->tell();
+                
               }else{ echo "empty";
-                 $this->class_obj=new \controller\outside\Login(array("login"),$this->data);
+                $this->class_obj=new \controller\outside\Login(array("login"),$this->data);
               }
             }
          //setcookie('client','021',time()+60*60*60);
