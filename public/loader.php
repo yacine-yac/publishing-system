@@ -3,14 +3,26 @@
 define('DS',DIRECTORY_SEPARATOR );
 define('project',dirname(__DIR__).DS);
 define('app',project."Application".DS);
-define('config',app."configuration".DS);
+define('config',app."configurations".DS.".config");
 define('model',app."model".DS);
 define('views',app."views".DS);
 define('controller',app."controller".DS);
-$modules=[project,app,model,views,controller];
+
+
+$modules=[project,app,model,config,views,controller];
 set_include_path(get_include_path(). PATH_SEPARATOR .implode(PATH_SEPARATOR,$modules));
 
 spl_autoload_register('spl_autoload');
+
+
+
+
+
+
+
+
+
+
 //define('path_project',dirname(__FILE__));
  
 //echo path_project;

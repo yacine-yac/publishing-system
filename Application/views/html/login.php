@@ -1,5 +1,5 @@
-<form method="POST">
-<input type="text" placeholder="text" name="action" ><br>
-  <input type="text" placeholder="text" name="option" ><br>
+<form method="POST" action="/authentification">
+<!--<input type="email" placeholder="email" name="email" ><br>-->
+<input type="password" placeholder="password" name="password" ><br> 
   <input type="submit" placeholder="ok ">
 </form>

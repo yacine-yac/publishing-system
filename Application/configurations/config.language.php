@@ -1,1 +1,0 @@
-<?php const language=["EN","FR","AR"];  ?>
